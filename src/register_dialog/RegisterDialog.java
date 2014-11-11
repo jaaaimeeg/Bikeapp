@@ -24,7 +24,9 @@ import com.example.bikeapp.Main;
 import com.example.bikeapp.R;
 
 import components.Button;
+import components.ImageView;
 import components.TextEdit;
+import components.ImageView;
 
 public class RegisterDialog extends  Dialog implements OnClickListener{
 	
@@ -53,9 +55,8 @@ public class RegisterDialog extends  Dialog implements OnClickListener{
         
 		layoutV.setOrientation(LinearLayout.VERTICAL);
 		layoutV.setGravity(Gravity.CENTER);
-
-        layoutV.setPadding((int)(width*0.15),0, (int)(width*0.15),0);
-		
+        
+        new ImageView(context,layoutV,(int)(width*0.5f),(int)(height*0.15f),R.raw.logo);
 		final TextEdit nombre = new TextEdit(context, layoutV, "Nombre", R.drawable.oval);
 		final TextEdit apellido = new TextEdit(context, layoutV, "Apellido", R.drawable.oval);
 		final TextEdit email = new TextEdit(context, layoutV, "Correo Electronico", R.drawable.oval);
@@ -75,7 +76,7 @@ public class RegisterDialog extends  Dialog implements OnClickListener{
 		//layoutV.setBackgroundColor(Color.WHITE);
 		mainLayout.setGravity(Gravity.CENTER);
 		mainLayout.setBackgroundColor(Color.parseColor("#70000000"));
-		mainLayout.addView(layoutV, (int)(width*0.9), (int)(height*0.9));
+		mainLayout.addView(layoutV, (int)(width*0.95), (int)(height*0.92));
 		mainLayout.setOnClickListener(this);
 		layoutV.setOnClickListener(null);
 		

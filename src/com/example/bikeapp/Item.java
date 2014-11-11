@@ -1,6 +1,8 @@
 package com.example.bikeapp;
 
-public class Item {
+import android.content.Context;
+
+public class Item{
 	private String text;
 	private int icon;
 	

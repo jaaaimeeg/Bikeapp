@@ -2,14 +2,13 @@ package com.example.bikeapp;
 
 
 import model.Usuario;
-import register_dialog.RegisterDialog;
 import model.UsuarioFacade;
+import register_dialog.RegisterDialog;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
@@ -56,7 +55,7 @@ import components.TextView;
         this.passwordEdit=new TextEdit(this,layout,"Password",R.drawable.oval);
         
         Button ingresar = new Button(this,layout,"Entrar",R.drawable.gradient_orange);
-        TextView text=new TextView(this,"Regístrate en Bikeapp",18, (Object) this,"clickRegister");
+        TextView text=new TextView(this,"Regístrate en Bikeapp", 16, (Object) this,"clickRegister");
         
         mainLayout.addView(layout,-1,-1);
         mainLayout.addView(text);    
@@ -104,7 +103,6 @@ import components.TextView;
             		Usuario user=new Usuario();
             		user=db.login(userEdit.getText().toString().toLowerCase(), passwordEdit.getText().toString().toLowerCase());
             		if(user!=null){
-	            	  	
 	                    Intent l = new Intent(Main.this, Perfil.class);
 	                    //enviar datos a activity con usuario
 	                    l.putExtra("idUsuario", user.getIdUsuario());
@@ -129,10 +127,6 @@ import components.TextView;
         
     }
 
-    /**
-     * 
-     * @param main
-     */
     public void clickRegister(Main main){
     		new RegisterDialog(main).show();
     }
