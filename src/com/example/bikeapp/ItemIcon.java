@@ -2,6 +2,7 @@ package com.example.bikeapp;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+@SuppressLint("InlinedApi") 
 public class ItemIcon extends ArrayAdapter<Item> {
 
 	Context context;
 	List<Item> items;
 	
-	/**AHAHHA
+	/**
 	 * Constructor clase ItemIcon utilizado para la barra lateral de 
 	 * menu
 	 */

@@ -12,10 +12,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.Activity;
- 
 
-@SuppressLint("NewApi") public class AlertFragment extends Fragment {
+@SuppressLint("NewApi") 
+public class AlertFragment extends Fragment {
 
 protected MapView map;
 private MyLocationOverlay myLocationOverlay;

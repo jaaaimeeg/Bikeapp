@@ -1,6 +1,6 @@
 package com.example.bikeapp;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,17 +12,18 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import components.*;
 
+@SuppressLint("NewApi") 
 public class HomeFragment extends Fragment  {
 
-	private RelativeLayout layout1;
 	private Context context;
 	
 	public HomeFragment(){}
 	
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState){
+	@SuppressWarnings("deprecation")
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     	context = inflater.getContext();
-    	int width = getActivity().getWindowManager().getDefaultDisplay().getWidth();
+    	
+		int width = getActivity().getWindowManager().getDefaultDisplay().getWidth();
     	int height = getActivity().getWindowManager().getDefaultDisplay().getHeight();
     	RelativeLayout mainLayout = new RelativeLayout(context);
 		LinearLayout layout2 = new LinearLayout(context);

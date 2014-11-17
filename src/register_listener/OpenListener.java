@@ -17,5 +17,4 @@ public class OpenListener implements OnClickListener{
 	public void onClick(View v) {
 		new RegisterDialog(this.main).show();
 	}
-
 }

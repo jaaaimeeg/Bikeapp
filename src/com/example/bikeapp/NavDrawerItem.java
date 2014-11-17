@@ -19,9 +19,9 @@ public class NavDrawerItem {
     }
     
     public NavDrawerItem(String nombre, String correo, int foto){
-    	this.nombre = nombre;
-    	this.correo = correo;
-    	this.foto = foto;
+    	this.setNombre(nombre);
+    	this.setCorreo(correo);
+    	this.setFoto(foto);
     }
      
     public NavDrawerItem(String title, int icon, boolean isCounterVisible, String count){
@@ -62,4 +62,28 @@ public class NavDrawerItem {
     public void setCounterVisibility(boolean isCounterVisible){
         this.isCounterVisible = isCounterVisible;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public int getFoto() {
+		return foto;
+	}
+
+	public void setFoto(int foto) {
+		this.foto = foto;
+	}
 }
