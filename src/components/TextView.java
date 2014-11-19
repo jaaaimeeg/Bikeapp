@@ -27,6 +27,13 @@ public class TextView extends android.widget.TextView implements OnClickListener
 		this.setTextSize(size);
 	}
 	
+	public TextView(Context context,String text,int size, int drawable) {
+		this(context,text);
+		this.setText(text);
+		this.setTextSize(size);
+		this.setBackgroundDrawable(context.getResources().getDrawable(drawable));
+	}
+	
 	public TextView(Context context,String text,int size,Object object,String methodName) {
 		this(context,text,size);
 		this.object=object;

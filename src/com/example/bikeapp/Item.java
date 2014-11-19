@@ -11,6 +11,10 @@ public class Item{
 		this.text = t;
 		this.icon = i;
 	}
+
+	public Item(String t) {
+		this.text = t;
+	}
 	
 	public int getIcon() { return this.icon; }
 	public String getText() { return this.text; }

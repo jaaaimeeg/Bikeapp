@@ -1134,6 +1134,7 @@ containing a value of this type.
         public static final int logobikeapp=0x7f02007c;
         public static final int oval=0x7f02007d;
         public static final int register=0x7f02007e;
+        public static final int texto=0x7f02007f;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1147,7 +1148,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060047;
+        public static final int action_settings=0x7f060048;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1172,7 +1173,9 @@ containing a value of this type.
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
+        public static final int layout1=0x7f060046;
         public static final int listMode=0x7f060001;
+        public static final int list_buttons=0x7f060047;
         public static final int list_item=0x7f060029;
         public static final int list_slidermenu=0x7f06003e;
         public static final int map=0x7f060045;
@@ -1195,7 +1198,6 @@ containing a value of this type.
         public static final int search_plate=0x7f060036;
         public static final int search_src_text=0x7f060037;
         public static final int search_voice_btn=0x7f06003b;
-        public static final int section_label=0x7f060046;
         public static final int shortcut=0x7f06002e;
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
@@ -1282,7 +1284,8 @@ containing a value of this type.
         public static final int android=0x7f050000;
         public static final int logo=0x7f050001;
         public static final int marca=0x7f050002;
-        public static final int tux=0x7f050003;
+        public static final int perfil=0x7f050003;
+        public static final int tux=0x7f050004;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

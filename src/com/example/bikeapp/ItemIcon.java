@@ -20,7 +20,7 @@ public class ItemIcon extends ArrayAdapter<Item> {
 	 * menu
 	 */
 	public ItemIcon(Context context, List<Item> items) {
-		super(context, android.R.layout.simple_list_item_activated_1, items);
+		super(context, android.R.layout.simple_list_item_1, items);
 		this.context=context;
 		this.items = items;
 	}
@@ -28,6 +28,7 @@ public class ItemIcon extends ArrayAdapter<Item> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LinearLayout layout=new LinearLayout(this.context);
+		layout.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.list_selector));
 		
 		ImageView image=new ImageView(this.context);
 		
