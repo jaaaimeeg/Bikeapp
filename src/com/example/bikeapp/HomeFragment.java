@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment  {
 		layout2.findViewById(R.id.layout1);
 		layout3.setOrientation(LinearLayout.VERTICAL);
 		layout3.setGravity(Gravity.CENTER_VERTICAL);
-		new ImageView(context,layout2,(int)(150),(int)(150),R.raw.perfil);
+		new ImageView(context,layout2,(int)(150),(int)(150),R.raw.logo);
 		String text = "<font color=#F47F1F>Jaime Galeano</font>";
 		String text2 = "<font color=#F47F1F>jgaleano2011@alu.uct.cl</font>";
 		TextView nombre = new TextView(context,"Jaime Galeano",16,R.drawable.texto);
