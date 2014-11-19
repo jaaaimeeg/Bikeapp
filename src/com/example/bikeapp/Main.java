@@ -1,6 +1,5 @@
 package com.example.bikeapp;
 
-
 import model.Usuario;
 import model.UsuarioFacade;
 import register_dialog.RegisterDialog;
@@ -24,7 +23,8 @@ import components.TextEdit;
 import components.TextView;
 
 
-@TargetApi(Build.VERSION_CODES.GINGERBREAD) @SuppressLint("NewApi") public class Main extends Activity {
+@TargetApi(Build.VERSION_CODES.GINGERBREAD) @SuppressLint("NewApi") 
+public class Main extends Activity {
 
 	public int width;
 	public int height;
@@ -40,16 +40,19 @@ import components.TextView;
     	this.width =getWindowManager().getDefaultDisplay().getWidth();
 		this.height=getWindowManager().getDefaultDisplay().getHeight();
 		
-		
+		/**
+		 * Activity Layouts
+		 */
         RelativeLayout mainLayout=new RelativeLayout(this);
         LinearLayout layout=new LinearLayout(this);
-        
         
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.CENTER);
         
-        /************************** Contenido Grafico ****************************************/
-        
+        /**
+         * Graphic content
+         * Add textEdit of user and password to main layout
+         */
         new ImageView(this,layout,this.width*0.5f,this.height*0.15f,R.raw.logo);
         this.userEdit=new TextEdit(this,layout,"Usuario",R.drawable.oval);
         this.passwordEdit=new TextEdit(this,layout,"Password",R.drawable.oval);
@@ -59,12 +62,13 @@ import components.TextView;
         
         mainLayout.addView(layout,-1,-1);
         mainLayout.addView(text);    
-        /***************************************************************************************/  
-       
+   
+        /**
+         * Layout configurations
+         */
         layout.setPadding((int)(this.width*0.15),0, (int)(this.width*0.15),0);
         LinearLayout.LayoutParams margin=new LinearLayout.LayoutParams(-1,-2);
         margin.bottomMargin=(int)(this.height*0.025);     
-        
   
         this.userEdit.setSingleLine();
         this.passwordEdit.setSingleLine();
@@ -72,7 +76,6 @@ import components.TextView;
         this.passwordEdit.setLayoutParams(margin);
         this.passwordEdit.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 
-        
         RelativeLayout.LayoutParams paramsLayout=new RelativeLayout.LayoutParams(-1,-1);        
         RelativeLayout.LayoutParams paramsText=new RelativeLayout.LayoutParams(-2,-2);
         
@@ -84,6 +87,14 @@ import components.TextView;
         
         text.setLayoutParams(paramsText);
         layout.setLayoutParams(paramsLayout);
+        
+        /**
+         * TEMPORARY FIX
+         */
+        this.tmpHelp();
+        /**
+         * END OF TEMPORARY FIX
+         */
         
         
         setContentView(mainLayout);
@@ -104,37 +115,36 @@ import components.TextView;
             		user=db.login(userEdit.getText().toString().toLowerCase(), passwordEdit.getText().toString().toLowerCase());
             		if(user!=null){
 	                    Intent l = new Intent(Main.this, Perfil.class);
+	                    
 	                    //enviar datos a activity con usuario
 	                    l.putExtra("idUsuario", user.getIdUsuario());
 	                    l.putExtra("nombre", user.getNombre());
 	                    l.putExtra("apellido", user.getApellido());
+	                    
 	                    startActivity(l);
 	                }else{
 	                	AlertDialog alertDialog = new AlertDialog.Builder(Main.this).create();
                 		alertDialog.setTitle("Error");
                 		alertDialog.setMessage("Este usuario no existe");//+buscar);
-                		alertDialog.show();
-                	  	
-                    	
+                		alertDialog.show();       	
                     }
-            		
             	}
-          
                }
-           
-        });
-       
-        
-    }
-
-    public void clickRegister(Main main){
-    		new RegisterDialog(main).show();
+        }); // END OF ingresarSetOnClickListener()
     }
 
     /**
-     * ClickEnter 
-     * Metodo instanciado cuando se preciona el btn "Entrar"
+     * Open user register window. This allow user to
+     * register into app.
      * 
-     * @param main
+     * @param main Main Activity
      */
+    public void clickRegister(Main main){
+    		new RegisterDialog(main).show();
+    }
+    
+    public void tmpHelp() {
+    	this.userEdit.setText("@");
+    }
+  
 }

@@ -9,8 +9,6 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.text.method.PasswordTransformationMethod;
@@ -26,14 +24,12 @@ import com.example.bikeapp.R;
 import components.Button;
 import components.ImageView;
 import components.TextEdit;
-import components.ImageView;
 
-public class RegisterDialog extends  Dialog implements OnClickListener{
+public class RegisterDialog extends Dialog implements OnClickListener{
 	
-
-
 	final UsuarioFacade mydb = new UsuarioFacade(getContext());
-
+	static boolean close = false;
+	
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD) @SuppressWarnings("deprecation")
 	public RegisterDialog(Context context) {
 		super(context,android.R.style.Theme_Translucent_NoTitleBar);
@@ -42,6 +38,9 @@ public class RegisterDialog extends  Dialog implements OnClickListener{
 		int width =((Main)context).getWindowManager().getDefaultDisplay().getWidth();
 		int height=((Main)context).getWindowManager().getDefaultDisplay().getHeight();
 		
+		/**
+		 * Dialog Layouts
+		 */
 		LinearLayout mainLayout=new LinearLayout(context);
 		LinearLayout layoutV = new LinearLayout(context);
 		layoutV.setPadding((int)(width*0.15),0, (int)(width*0.15),0);
@@ -55,20 +54,30 @@ public class RegisterDialog extends  Dialog implements OnClickListener{
         
 		layoutV.setOrientation(LinearLayout.VERTICAL);
 		layoutV.setGravity(Gravity.CENTER);
-        
+		
+		/**
+		 * Layout attributes
+		 */
         new ImageView(context,layoutV,(int)(width*0.5f),(int)(height*0.15f),R.raw.logo);
 		final TextEdit nombre = new TextEdit(context, layoutV, "Nombre", R.drawable.oval);
 		final TextEdit apellido = new TextEdit(context, layoutV, "Apellido", R.drawable.oval);
 		final TextEdit email = new TextEdit(context, layoutV, "Correo Electronico", R.drawable.oval);
 		final TextEdit pass = new TextEdit(context, layoutV, "Contraseña", R.drawable.oval);
 		
-
         nombre.setLayoutParams(margin);
         apellido.setLayoutParams(margin);
         email.setLayoutParams(margin);
         pass.setLayoutParams(margin);
 		pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
 		
+		
+		/**
+		 * TEMPORARY FIX 
+		 */
+		email.setText("@");
+		/**
+		 * END OF TEMPORARY FIX
+		 */
 		Button registrar = new Button(context, layoutV, "Registrar", R.drawable.gradient_orange);
 		
 		layoutV.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.oval));
@@ -99,43 +108,46 @@ public class RegisterDialog extends  Dialog implements OnClickListener{
 								pass.getText().toString()
 										.toLowerCase());
 						mydb.addUsuario(user);
+						
+						/*
+						 * Alert Dialog
+						 */
 						AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
 						alertDialog.setTitle("Registro");
 						alertDialog.setMessage("Registro Exitoso");
 						alertDialog.show();
-
-
+						
 					} else {
 						AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
 						alertDialog.setTitle("Registro");
 						alertDialog.setMessage("Correo Inválido");
 						alertDialog.show();
 					}
-
 				}
-
 			}
-
 		});
+		
+		if(close){
+			this.dismiss();
+		}
 	}
 
 	@Override
 	public void onClick(View v) {
 		this.dismiss();
-		
 	}
 	
+	/**
+	 * Verifies that user email is valid.
+	 * @param email string to be verified
+	 * @return boolean
+	 */
 	public static boolean checkEmail(String email) {
-
 		// Establecer el patron
 		Pattern p = Pattern.compile("[-\\w\\.]+@[\\.\\w]+\\.\\w+");
-
 		// Asociar el string al patron
 		Matcher m = p.matcher(email);
-
 		// Comprobar si encaja
 		return m.matches();
-
 	}
-
 }

@@ -119,16 +119,28 @@ public class Perfil extends Activity {
         }
     }
     
+    /**
+     * Load fragment into main activity
+     * Uses position of nav bar element
+     * 
+     * @param position number of element in list
+     */
     private void displayView(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
         switch (position) {
+        // load Perfil
         case 0:
             fragment = new HomeFragment();
             break;
+        // load Alertas
         case 1:
             fragment = new AlertFragment();
             break;
+        // load Tips
+        case 2:
+        	fragment = new TipsFragment();
+        	break;
  
         default:
             break;

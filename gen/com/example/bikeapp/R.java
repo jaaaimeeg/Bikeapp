@@ -1148,7 +1148,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060048;
+        public static final int action_settings=0x7f060049;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1174,6 +1174,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
         public static final int layout1=0x7f060046;
+        public static final int list=0x7f060048;
         public static final int listMode=0x7f060001;
         public static final int list_buttons=0x7f060047;
         public static final int list_item=0x7f060029;
@@ -1270,6 +1271,7 @@ containing a value of this type.
         public static final int fragment_navigation_drawer=0x7f03001e;
         public static final int fragment_perfil=0x7f03001f;
         public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int tips_tab=0x7f030021;
     }
     public static final class menu {
         public static final int action_drawer=0x7f0e0000;
@@ -1333,9 +1335,10 @@ containing a value of this type.
         public static final int app_name=0x7f0b000d;
         /**  Content Description 
          */
-        public static final int desc_list_item_icon=0x7f0b0014;
+        public static final int desc_list_item_icon=0x7f0b0015;
         public static final int drawer_close=0x7f0b0012;
         public static final int drawer_open=0x7f0b0011;
+        public static final int facebook_app_id=0x7f0b0014;
         public static final int hello_world=0x7f0b0010;
         public static final int title_activity_perfil=0x7f0b000e;
     }

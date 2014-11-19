@@ -7,8 +7,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
-    <string name="api_key">Fmjtd%7Cluurnu0tl1%2Cbn%3Do5-9w8nq4</string> 
-
+    <string name="api_key">Fmjtd%7Cluurnu0tl1%2Cbn%3Do5&#8211;9w8nq4</string> 
+	<string name="facebook_app_id">865189326855056</string>
+    
 <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
      

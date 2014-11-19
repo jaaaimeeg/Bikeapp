@@ -1,0 +1,27 @@
+USO DE FACEBOOK
+ (https://developers.facebook.com/quickstarts/865189326855056/?platform=android)
+
+PASO 1
+==================
+- Descargar SDK https://developers.facebook.com/resources/facebook-android-sdk-current.zip
+- Descargar APK https://developers.facebook.com/resources/Facebook-11.zip
+
+Para APK:
+Mac:
+  ./adb install ~/Downloads/Facebook-11.apk
+Windows:
+  adb install %HOMEPATH%\Downloads\Facebook-11.apk
+
+OBS: Se debe instalar el APK en el emulador para que pueda funcionar
+correctamente la conexion hace fb.
+
+PASO 2
+==================
+Importar SDK Facebook
+
+
+
+PASO 3
+==================
+Instalar Android 2.2 API 8 para el funcionamiento del SDK.
+Se puede hacer directamente con la herramienta del Android SDK Manager
