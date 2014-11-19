@@ -1617,10 +1617,11 @@ containing a value of this type.
     }
     public static final class raw {
         public static final int android=0x7f050000;
-        public static final int logo=0x7f050001;
-        public static final int marca=0x7f050002;
-        public static final int perfil=0x7f050003;
-        public static final int tux=0x7f050004;
+        public static final int avatar=0x7f050001;
+        public static final int logo=0x7f050002;
+        public static final int marca=0x7f050003;
+        public static final int perfil=0x7f050004;
+        public static final int tux=0x7f050005;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

@@ -35,19 +35,25 @@ public class HomeFragment extends Fragment  {
 		layout2.findViewById(R.id.layout1);
 		layout3.setOrientation(LinearLayout.VERTICAL);
 		layout3.setGravity(Gravity.CENTER_VERTICAL);
-		new ImageView(context,layout2,(int)(150),(int)(150),R.raw.logo);
+		new ImageView(context,layout2,(int)(150),(int)(150),R.raw.avatar);
+		
 		String text = "<font color=#F47F1F>Jaime Galeano</font>";
 		String text2 = "<font color=#F47F1F>jgaleano2011@alu.uct.cl</font>";
+		
 		TextView nombre = new TextView(context,"Jaime Galeano",16,R.drawable.texto);
 		TextView correo = new TextView(context,"jgaleano2011@alu.uct.cl",10,R.drawable.texto);
+		
 		nombre.setText(Html.fromHtml(text));
 		correo.setText(Html.fromHtml(text2));
+		
 		layout3.addView(nombre);
 		layout3.addView(correo);
 		layout3.setPadding(10, 50, 10, 10);
 		layout2.addView(layout3);
 		layout2.setGravity(Gravity.CENTER_HORIZONTAL);
+		
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
+		
 		List<Item> elements = new ArrayList<Item>();
 		elements.add(new Item("Estado"));
 		elements.add(new Item("Actividad"));

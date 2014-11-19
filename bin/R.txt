@@ -565,10 +565,11 @@ int menu menu_drawer 0x7f0e0004
 int menu perfil 0x7f0e0005
 int menu v 0x7f0e0006
 int raw android 0x7f050000
-int raw logo 0x7f050001
-int raw marca 0x7f050002
-int raw perfil 0x7f050003
-int raw tux 0x7f050004
+int raw avatar 0x7f050001
+int raw logo 0x7f050002
+int raw marca 0x7f050003
+int raw perfil 0x7f050004
+int raw tux 0x7f050005
 int string abc_action_bar_home_description 0x7f09001e
 int string abc_action_bar_up_description 0x7f09001f
 int string abc_action_menu_overflow_description 0x7f090020
