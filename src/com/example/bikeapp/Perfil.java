@@ -109,7 +109,7 @@ public class Perfil extends Activity {
     /**
      * Slide menu item click listener
      * */
-    private class SlideMenuClickListener implements
+    public class SlideMenuClickListener implements
             ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position,
