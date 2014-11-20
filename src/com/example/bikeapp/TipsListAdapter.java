@@ -11,7 +11,6 @@ import components.TextView;
 public class TipsListAdapter extends BaseExpandableListAdapter {
 		Activity activity;
 		
-		
 		public TipsListAdapter(Activity a) {
 			this.activity = a;
 		}
