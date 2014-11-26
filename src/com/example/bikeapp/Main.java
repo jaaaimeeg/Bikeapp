@@ -8,6 +8,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
@@ -91,7 +92,7 @@ public class Main extends Activity {
         /**
          * TEMPORARY FIX
          */
-//        this.tmpHelp();
+        this.tmpHelp();
         /**
          * END OF TEMPORARY FIX
          */
@@ -114,12 +115,11 @@ public class Main extends Activity {
             		Usuario user=new Usuario();
             		user=db.login(userEdit.getText().toString().toLowerCase(), passwordEdit.getText().toString().toLowerCase());
             		if(user!=null){
+            			
+            			// Session con datos Usuario
+            			setSharedPreferences(user);
+            			
 	                    Intent l = new Intent(Main.this, Perfil.class);
-	                    
-	                    //enviar datos a activity con usuario
-	                    l.putExtra("idUsuario", user.getIdUsuario());
-	                    l.putExtra("nombre", user.getNombre());
-	                    l.putExtra("apellido", user.getApellido());
 	                    
 	                    startActivity(l);
 	                }else{
@@ -147,4 +147,14 @@ public class Main extends Activity {
     	this.userEdit.setText("@");
     }
   
+    public void setSharedPreferences(Usuario u) {
+    	// We need an Editor object to make preference changes.
+        SharedPreferences settings = getSharedPreferences("Bikeapp", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        
+        editor.putString("username", u.getCorreo());
+        
+        // Commit the edits!
+        editor.commit();
+    }
 }

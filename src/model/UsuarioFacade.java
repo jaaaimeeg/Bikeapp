@@ -19,8 +19,6 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 	public static final String USUARIO_COL_CORREO="CORREO";
 	public static final String USUARIO_COL_CONTRASENA="CONTRASENA";
 	
-	
-	
 	public UsuarioFacade(Context context) {
 		super(context,DATABASE_NAME,null,1);
 	}
@@ -61,8 +59,6 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 			     }
 	 	}	      
 	     return user;
-	     
-    	
     }
  
     //Agregar nuevo usuario
@@ -78,5 +74,36 @@ public class UsuarioFacade extends SQLiteOpenHelper{
     	db.insert("USUARIO", null, recordUser);
     }	
 	
-
+    /**
+     * Get User data from DB using user email.
+     * @param correo
+     * @return Usuario
+     */
+    public Usuario get(String correo){
+    	
+    	SQLiteDatabase db=this.getReadableDatabase();
+    	Usuario user = new Usuario();
+	
+    	String selectQuery1 = "SELECT * FROM USUARIO WHERE CORREO='"+correo+"'";
+	    Cursor cursor = db.rawQuery ( selectQuery1, null );
+	    
+	 	if (cursor.getCount()==0){
+	 		Log.d("CountCursor",String.valueOf(cursor.getCount()+"Cursor vacio "));
+	 		// looping through all rows and adding to list
+	 		user=null;
+	 	}else{
+	 		Log.d("login",String.valueOf(cursor.getCount()));
+			    Log.d("SQLquery",selectQuery1);
+			     if (cursor.moveToFirst()) {
+			         do {
+			        	 user.setIdUsuario(cursor.getInt(0));
+			        	 user.setNombre(cursor.getString(cursor.getColumnIndex(USUARIO_COL_NOMBRE)));
+			        	 user.setApellido(cursor.getString(cursor.getColumnIndex(USUARIO_COL_APELLIDO)));
+			        	 user.setCorreo(cursor.getString(cursor.getColumnIndex(USUARIO_COL_CORREO)));
+			        	 user.setContrasena(cursor.getString(cursor.getColumnIndex(USUARIO_COL_CONTRASENA)));
+			         } while (cursor.moveToNext());
+			     }
+	 	}	      
+	     return user;
+    }
 }
