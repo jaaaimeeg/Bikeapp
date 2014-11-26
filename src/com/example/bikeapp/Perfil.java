@@ -32,9 +32,13 @@ public class Perfil extends Activity {
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
     private TypedArray navMenuIcons2;
+    
+    String nombre;
+    String correo;
  
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
+	private Bundle extras;
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class Perfil extends Activity {
         mTitle = mDrawerTitle = getTitle();
  
         // load slide menu items
+        
         navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
  
         // nav drawer icons from resources
@@ -69,7 +74,7 @@ public class Perfil extends Activity {
  
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(),
-                navDrawerItems);
+                navDrawerItems,0,18);
         mDrawerList.setAdapter(adapter);
  
         // enabling action bar app icon and behaving it as toggle button
@@ -98,7 +103,8 @@ public class Perfil extends Activity {
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
  
         if (savedInstanceState == null) {
-            // on first time display view for first nav item
+
+            
             displayView(0);
         }
     }
@@ -199,7 +205,7 @@ public class Perfil extends Activity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        getActionBar().setTitle(Html.fromHtml("<big>"+mTitle+"</big>"));
     }
  
     /**

@@ -35,7 +35,7 @@ public class TipsFragment extends Fragment  {
 		elements.add(new NavDrawerItem("Kit de herramientas"));
 		elements.add(new NavDrawerItem("Arreglos y Mantención"));
 		elements.add(new NavDrawerItem("Seguridad Vial"));
-		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements, 50);
+		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements, 0,18);
 		elv.setAdapter(adapter);
 		elv.setOnItemClickListener(new OnItemClickListener(){
 

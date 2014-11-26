@@ -40,7 +40,7 @@ public class StateFragment extends Fragment {
 		elements.add(new NavDrawerItem("Hacia el trabajo"));
 		elements.add(new NavDrawerItem("Hacia la escuela"));
 		elements.add(new NavDrawerItem("Hacia la Universidad"));
-		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements,30);
+		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements,0,18);
 		listaSt.setAdapter(adapter);
 		listaSt.setOnItemClickListener(new OnItemClickListener(){
 

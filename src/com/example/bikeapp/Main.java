@@ -120,7 +120,11 @@ public class Main extends Activity {
             			setSharedPreferences(user);
             			
 	                    Intent l = new Intent(Main.this, Perfil.class);
-	                    
+	                    //enviar datos a activity con usuario
+	                    l.putExtra("idUsuario", user.getIdUsuario());
+	                    l.putExtra("nombre", user.getNombre());
+	                    l.putExtra("apellido", user.getApellido());
+	                    l.putExtra("correo", user.getCorreo());
 	                    startActivity(l);
 	                }else{
 	                	AlertDialog alertDialog = new AlertDialog.Builder(Main.this).create();
@@ -144,7 +148,7 @@ public class Main extends Activity {
     }
     
     public void tmpHelp() {
-    	this.userEdit.setText("@");
+    	this.userEdit.setText("jgaleano2011@alu.uct.cl");
     }
   
     public void setSharedPreferences(Usuario u) {
