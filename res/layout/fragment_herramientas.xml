@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="100dp"
+    android:paddingRight="100dp"
+    android:paddingTop="50dp" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:text="Equipo Básico de Herramientas"
+        android:textColor="@color/background"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp"
+        android:text="LLAVES"
+        android:textColor="@color/list_background_pressed"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Disponer de un juego de llaves nose será de ayuda para ajustar alguna que otra tuerca y sobre todo poder hacer diferentes ajustes en las suspensiones mas actuales. "
+        android:textColor="@color/list_background_pressed"
+        android:textSize="24dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="321dp"
+        android:layout_height="371dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/llaves" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="JUEGO DE LLAVES ALLEN"
+        android:textColor="@color/list_background_pressed"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Con ellas podemos ajustar multitud de tornillos de nuestra bicicleta, siendo lo mas recomendable disponer de un juego completo de llaves allen que vayan desde la medida 1.5 a la 8."
+        android:textColor="@color/list_background_pressed"
+        android:textSize="24dp" />
+
+</LinearLayout>

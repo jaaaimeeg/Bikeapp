@@ -91,7 +91,7 @@ public class Main extends Activity {
         /**
          * TEMPORARY FIX
          */
-        this.tmpHelp();
+//        this.tmpHelp();
         /**
          * END OF TEMPORARY FIX
          */

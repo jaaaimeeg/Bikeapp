@@ -17,7 +17,8 @@
         android:paddingTop="20dp"
         android:text="Tu Estado Actual"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/background" />
+        android:textColor="@color/background"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +36,9 @@
             android:ems="10"
             android:inputType="textMultiLine"
             android:paddingLeft="20dp"
-            android:textColorLink="@color/list_item_title" >
+            android:textColorLink="@color/list_item_title"
+            android:textSize="30dp" >
+
         </EditText>
 
         <ImageView
@@ -58,7 +61,8 @@
         android:paddingTop="30dp"
         android:text="Elige tu nuevo estado"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/background" />
+        android:textColor="@color/background"
+        android:textSize="30dp" />
 
     <ListView
         android:id="@+id/listView1"

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- the theme applied to the application or activity -->
     <style name="CustomActionBarTheme"
@@ -9,7 +9,9 @@
     <!-- ActionBar styles -->
     <style name="MyActionBar"
            parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name= "android:textSize">40sp</item>
         <item name="android:background">@color/background</item>
+        <item name="android:height">100dp</item>
     </style>
     
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">

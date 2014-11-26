@@ -33,5 +33,14 @@
         <item>@drawable/icon_setting</item>
         <item>@drawable/icon_help</item>
     </array>
+    
+    <array name="nav_drawer_icons2">
+        <item>@drawable/icon_perfilwhite</item>
+        <item>@drawable/icon_alertwhite</item>
+        <item>@drawable/icon_tipswhite</item>
+        <item>@drawable/icon_morewhite</item>
+        <item>@drawable/icon_settingwhite</item>
+        <item>@drawable/icon_help</item>
+    </array>
 
 </resources>

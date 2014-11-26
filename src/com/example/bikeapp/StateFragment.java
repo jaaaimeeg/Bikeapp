@@ -21,7 +21,7 @@ public class StateFragment extends Fragment {
 	private View rootView;
 	private ListView listaSt;
 	private EditText estado;
-	private List<Item> elements;
+	private ArrayList<NavDrawerItem> elements;
 
 	public StateFragment() {
 	}
@@ -34,13 +34,13 @@ public class StateFragment extends Fragment {
 		listaSt.setHeaderDividersEnabled(true);
 		estado = (EditText) rootView.findViewById(R.id.editText1);
 		
-		elements = new ArrayList<Item>();
-		elements.add(new Item("En ruta"));
-		elements.add(new Item("En casa"));
-		elements.add(new Item("Hacia el trabajo"));
-		elements.add(new Item("Hacia la escuela"));
-		elements.add(new Item("Hacia la Universidad"));
-		ItemIcon adapter = new ItemIcon(context, elements);
+		elements = new ArrayList<NavDrawerItem>();
+		elements.add(new NavDrawerItem("En ruta"));
+		elements.add(new NavDrawerItem("En casa"));
+		elements.add(new NavDrawerItem("Hacia el trabajo"));
+		elements.add(new NavDrawerItem("Hacia la escuela"));
+		elements.add(new NavDrawerItem("Hacia la Universidad"));
+		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements,30);
 		listaSt.setAdapter(adapter);
 		listaSt.setOnItemClickListener(new OnItemClickListener(){
 
@@ -48,7 +48,7 @@ public class StateFragment extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				estado.setText(elements.get(arg2).getText());
+				estado.setText(elements.get(arg2).getTitle());
 				
 			}
 		});

@@ -66,7 +66,7 @@ public class TipsListAdapter extends BaseExpandableListAdapter {
             textView.setPadding(70,70,70,70);
             
             textView.setTextColor(Color.rgb(158,158,159));
-            textView.setTextSize(40);
+            textView.setTextSize(25);
             
             textView.setBackgroundColor(Color.WHITE);
             return textView;
@@ -80,7 +80,7 @@ public class TipsListAdapter extends BaseExpandableListAdapter {
             // sets child colors
             textView.setTextColor(Color.rgb(158,158,159));
             textView.setPadding(50, 50, 50, 50);
-            textView.setTextSize(35);
+            textView.setTextSize(20);
             
             textView.setBackgroundColor(Color.rgb(235,239,241));
             

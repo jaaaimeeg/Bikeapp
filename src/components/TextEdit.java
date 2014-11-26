@@ -8,6 +8,7 @@ public class TextEdit extends EditText {
 
 	public TextEdit(Context context) {
 		super(context);
+		this.setTextSize(40);
 	}
 	
 	@SuppressWarnings("deprecation")

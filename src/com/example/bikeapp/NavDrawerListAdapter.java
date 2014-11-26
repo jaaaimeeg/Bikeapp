@@ -15,10 +15,17 @@ public class NavDrawerListAdapter extends BaseAdapter {
      
     private Context context;
     private ArrayList<NavDrawerItem> navDrawerItems;
+    private int padding;
      
     public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems){
         this.context = context;
         this.navDrawerItems = navDrawerItems;
+    }
+    
+    public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems, int padding){
+        this.context = context;
+        this.navDrawerItems = navDrawerItems;
+        this.padding = padding;
     }
  
     @Override
@@ -43,9 +50,13 @@ public class NavDrawerListAdapter extends BaseAdapter {
                     context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.drawer_list_item, null);
         }
-          
+        
+        if(padding>0){
+        	convertView.setPadding(0, padding, 0, padding);
+        }
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);
         TextView txtTitle = (TextView) convertView.findViewById(R.id.title);
+        txtTitle.setTextSize(30);
         TextView txtCount = (TextView) convertView.findViewById(R.id.counter);
           
         imgIcon.setImageResource(navDrawerItems.get(position).getIcon());        

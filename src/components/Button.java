@@ -17,7 +17,7 @@ public class Button extends android.widget.Button implements OnClickListener {
 	public Button(Context context) {
 		super(context);
 		this.setTextColor(Color.parseColor("#ffffff"));
-		this.setTextSize(20);
+		this.setTextSize(30);
 	}
 
 	@SuppressWarnings("deprecation")

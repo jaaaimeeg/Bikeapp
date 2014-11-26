@@ -20,8 +20,9 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:padding="50dp"
-            android:src="@drawable/icon_help" />
+            android:padding="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/armstrong" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -57,7 +58,7 @@
         
 		android:id="@+id/list_buttons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_gravity="center"
         android:background="@color/list_background"
         android:choiceMode="singleChoice"

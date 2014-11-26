@@ -35,12 +35,14 @@ public class HomeFragment extends Fragment {
 		TextView txtnombre = (TextView) rootView.findViewById(R.id.textView1);
 		TextView txtmail = (TextView) rootView.findViewById(R.id.textView2);
 		txtnombre.setText("Nombre Usuario");
+		txtnombre.setTextSize(40);
 		txtmail.setText("Correo Usuario");
-		List<Item> elements = new ArrayList<Item>();
-		elements.add(new Item("Estado"));
-		elements.add(new Item("Actividad"));
-		elements.add(new Item("Editar Perfil"));
-		ItemIcon adapter = new ItemIcon(context, elements);
+		txtmail.setTextSize(25);
+		ArrayList<NavDrawerItem> elements = new ArrayList<NavDrawerItem>();
+		elements.add(new NavDrawerItem("Estado"));
+		elements.add(new NavDrawerItem("Actividad"));
+		elements.add(new NavDrawerItem("Editar Perfil"));
+		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements, 50);
 		listaB.setAdapter(adapter);
 		listaB.setOnItemClickListener(new OnItemClickListener(){
 
@@ -67,7 +69,7 @@ public class HomeFragment extends Fragment {
 			break;
 		// load Alertas
 		case 1:
-			fragment = new AlertFragment();
+			fragment = new ActividadFragment();
 			break;
 		// load Tips
 		case 2:
