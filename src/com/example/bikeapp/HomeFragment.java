@@ -23,6 +23,8 @@ public class HomeFragment extends Fragment {
 
 	private Context context;
 	private View rootView;
+	String nombre;
+	String correo;
 
 	public HomeFragment() {
 	}
@@ -31,12 +33,19 @@ public class HomeFragment extends Fragment {
 			Bundle savedInstanceState){
     	context = inflater.getContext();
     	rootView = inflater.inflate(R.layout.fragment_perfil, container, false);
+    	
+    	Bundle extras = getActivity().getIntent().getExtras();
+        // on first time display view for first nav item
+        if(extras != null) {
+        	nombre= extras.getString("nombre")+" "+extras.getString("apellido");
+        	correo = extras.getString("correo");
+        }
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
 		TextView txtnombre = (TextView) rootView.findViewById(R.id.textView1);
 		TextView txtmail = (TextView) rootView.findViewById(R.id.textView2);
-		txtnombre.setText("Nombre Usuario");
+		txtnombre.setText(nombre);
 		txtnombre.setTextSize(40);
-		txtmail.setText("Correo Usuario");
+		txtmail.setText(correo);
 		txtmail.setTextSize(25);
 		ArrayList<NavDrawerItem> elements = new ArrayList<NavDrawerItem>();
 		elements.add(new NavDrawerItem("Estado"));

@@ -120,6 +120,7 @@ public class Main extends Activity {
 	                    l.putExtra("idUsuario", user.getIdUsuario());
 	                    l.putExtra("nombre", user.getNombre());
 	                    l.putExtra("apellido", user.getApellido());
+	                    l.putExtra("correo", user.getCorreo());
 	                    
 	                    startActivity(l);
 	                }else{
