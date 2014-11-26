@@ -9,24 +9,23 @@
     <LinearLayout
         android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1.03"
         android:gravity="center"
         android:orientation="horizontal" >
 
         <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
+            android:id="@+id/fotoperfil"
+            android:layout_width="180dp"
+            android:layout_height="106dp"
             android:padding="20dp"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:src="@drawable/armstrong" />
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -55,10 +54,9 @@
         android:src="@drawable/abc_ab_bottom_solid_light_holo" />
 
     <ListView
-        
-		android:id="@+id/list_buttons"
+        android:id="@+id/list_buttons"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/list_background"
         android:choiceMode="singleChoice"
@@ -66,6 +64,6 @@
         android:dividerHeight="1dp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
-        android:listSelector="@drawable/list_selector"/>
+        android:listSelector="@drawable/list_selector" />
 
 </LinearLayout>

@@ -16,16 +16,25 @@ public class NavDrawerListAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<NavDrawerItem> navDrawerItems;
     private int padding;
+    private int textSize;
      
     public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems){
         this.context = context;
         this.navDrawerItems = navDrawerItems;
+        this.padding = 0;
     }
     
     public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems, int padding){
         this.context = context;
         this.navDrawerItems = navDrawerItems;
         this.padding = padding;
+    }
+    
+    public NavDrawerListAdapter(Context context, ArrayList<NavDrawerItem> navDrawerItems, int padding, int textSize){
+        this.context = context;
+        this.navDrawerItems = navDrawerItems;
+        this.padding = padding;
+        this.textSize = textSize;
     }
  
     @Override
@@ -51,12 +60,9 @@ public class NavDrawerListAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.drawer_list_item, null);
         }
         
-        if(padding>0){
-        	convertView.setPadding(0, padding, 0, padding);
-        }
         ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);
         TextView txtTitle = (TextView) convertView.findViewById(R.id.title);
-        txtTitle.setTextSize(30);
+        txtTitle.setTextSize(textSize);
         TextView txtCount = (TextView) convertView.findViewById(R.id.counter);
           
         imgIcon.setImageResource(navDrawerItems.get(position).getIcon());        

@@ -74,7 +74,7 @@ public class Perfil extends Activity {
  
         // setting the nav drawer list adapter
         adapter = new NavDrawerListAdapter(getApplicationContext(),
-                navDrawerItems);
+                navDrawerItems,0,18);
         mDrawerList.setAdapter(adapter);
  
         // enabling action bar app icon and behaving it as toggle button

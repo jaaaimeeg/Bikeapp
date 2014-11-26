@@ -14,7 +14,7 @@ public class Herramientas extends Fragment  {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_herramientas, null);
+        View v = inflater.inflate(R.layout.fragment_herramientas, container, false);
     	context = inflater.getContext();
 
         getActivity().getActionBar().setTitle(Html.fromHtml("<big> Kit de Herramientas </big>"));

@@ -1,27 +1,22 @@
 package com.example.bikeapp;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Usuario;
 import model.UsuarioFacade;
-
-import components.ImageView;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-
 import android.widget.TextView;
+
+import android.widget.ImageView;
 
 public class HomeFragment extends Fragment {
 
@@ -29,6 +24,7 @@ public class HomeFragment extends Fragment {
 	private View rootView;
 	String nombre;
 	String correo;
+	ImageView img;
 
 	public HomeFragment() {
 	}
@@ -45,13 +41,9 @@ public class HomeFragment extends Fragment {
         	correo = extras.getString("correo");
         }
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
+		img = (ImageView) rootView.findViewById(R.id.fotoperfil);
 		TextView txtnombre = (TextView) rootView.findViewById(R.id.textView1);
 		TextView txtmail = (TextView) rootView.findViewById(R.id.textView2);
-<<<<<<< HEAD
-		txtnombre.setText(nombre);
-		txtnombre.setTextSize(40);
-		txtmail.setText(correo);
-=======
 		
 		/*
 		 * SharedPreferences
@@ -63,17 +55,16 @@ public class HomeFragment extends Fragment {
 		Usuario user = uf.get(username);
 		
 		txtnombre.setText(user.getFullName());
-		txtnombre.setTextSize(40);
+		txtnombre.setTextSize(16);
 		txtmail.setText(user.getCorreo());
->>>>>>> origin/master
-		txtmail.setTextSize(25);
+		txtmail.setTextSize(12);
 		
 		
 		ArrayList<NavDrawerItem> elements = new ArrayList<NavDrawerItem>();
 		elements.add(new NavDrawerItem("Estado"));
 		elements.add(new NavDrawerItem("Actividad"));
 		elements.add(new NavDrawerItem("Editar Perfil"));
-		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements, 50);
+		NavDrawerListAdapter adapter = new NavDrawerListAdapter(context, elements, 50, 18);
 		listaB.setAdapter(adapter);
 		listaB.setOnItemClickListener(new OnItemClickListener(){
 
@@ -113,5 +104,10 @@ public class HomeFragment extends Fragment {
 		
 		android.app.FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+	}
+	
+	public void onDestroy(){
+		super.onDestroy();
+		img.setImageDrawable(null);
 	}
 }

@@ -3,18 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="start"
-    android:paddingLeft="50dp"
-    android:paddingTop="50dp"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingTop="30dp" >
 
     <TextView
         android:id="@+id/TextView07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="10dp"
         android:text="Actividad Hoy"
         android:textColor="@color/background"
-        android:textSize="30dp" />
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,19 +24,19 @@
             android:id="@+id/TextView06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Distancia"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/distancia1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,29 +47,29 @@
             android:id="@+id/TextView09"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Tiempo"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tiempo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="10dp"
         android:text="Promedio Actividad Semanal"
         android:textColor="@color/background"
-        android:textSize="30dp" />
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,19 +79,19 @@
             android:id="@+id/TextView01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Distancia"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/distancia2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,29 +102,29 @@
             android:id="@+id/TextView04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Tiempo"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tiempo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="30dp"
+        android:padding="10dp"
         android:text="Promedio Actividad Mensual"
         android:textColor="@color/background"
-        android:textSize="30dp" />
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,19 +134,19 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Distancia"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/distancia3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -157,19 +157,19 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:text="Tiempo"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tiempo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:paddingLeft="30dp"
             android:textColor="@color/list_item_title"
-            android:textSize="30dp" />
+            android:textSize="16dp" />
     </LinearLayout>
 
 </LinearLayout>
