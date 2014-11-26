@@ -42,8 +42,8 @@ public class HomeFragment extends Fragment {
         }
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
 		img = (ImageView) rootView.findViewById(R.id.fotoperfil);
-		TextView txtnombre = (TextView) rootView.findViewById(R.id.textView1);
-		TextView txtmail = (TextView) rootView.findViewById(R.id.textView2);
+		TextView txtnombre = (TextView) rootView.findViewById(R.id.titulo);
+		TextView txtmail = (TextView) rootView.findViewById(R.id.leyenda);
 		
 		/*
 		 * SharedPreferences
@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment {
 			break;
 		// load Tips
 		case 2:
-			fragment = new TipsFragment();
+			fragment = new EditarPerfil();
 			break;
 
 		default:

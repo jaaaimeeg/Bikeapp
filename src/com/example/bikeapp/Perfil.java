@@ -3,6 +3,7 @@ package com.example.bikeapp;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
@@ -143,6 +144,18 @@ public class Perfil extends Activity {
         // load Tips
         case 2:
         	fragment = new TipsFragment();
+        	break;
+        case 3:
+        	AlertDialog alertDialog = new AlertDialog.Builder(Perfil.this).create();
+    		alertDialog.setTitle("Aviso");
+    		alertDialog.setMessage("Debe adquirir una cuenta Premium para acceder a Más");//+buscar);
+    		alertDialog.show();       	
+        	break;
+        case 4:
+        	fragment = new SettingsFragment();
+        	break;
+        case 5:
+        	fragment = new AcercaFragment();
         	break;
  
         default:

@@ -113,7 +113,7 @@ public class Main extends Activity {
             	//else if(buscar!=0){
             		
             		Usuario user=new Usuario();
-            		user=db.login(userEdit.getText().toString().toLowerCase(), passwordEdit.getText().toString().toLowerCase());
+            		user=db.login(userEdit.getText().toString(), passwordEdit.getText().toString());
             		if(user!=null){
             			
             			// Session con datos Usuario

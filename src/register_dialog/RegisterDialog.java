@@ -102,11 +102,10 @@ public class RegisterDialog extends Dialog implements OnClickListener{
 				} else {
 					if (checkEmail(email.getText().toString())) {
 						Usuario user = new Usuario(0, nombre.getText()
-								.toString().toLowerCase(), apellido
-								.getText().toString().toLowerCase(), email
-								.getText().toString().toLowerCase(),
-								pass.getText().toString()
-										.toLowerCase());
+								.toString(), apellido
+								.getText().toString(), email
+								.getText().toString(),
+								pass.getText().toString());
 						mydb.addUsuario(user);
 						
 						/*

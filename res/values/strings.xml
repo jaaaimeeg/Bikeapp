@@ -22,6 +22,54 @@
         <item >Ajustes</item>
         <item >Ayuda</item>
     </string-array>
+    
+    <string-array name="regiones">
+        <item >Selecciona Región</item>
+        <item >I Región</item>
+        <item >II Región</item>
+        <item >III Región</item>
+        <item >IV Región</item>
+        <item >V Región</item>
+        <item >Región Metropolitana</item>
+        <item >VI Región</item>
+        <item >VII Región</item>
+        <item >VIII Región</item>
+        <item >IX Región</item>
+        <item >X Región</item>
+        <item >XI Región</item>
+        <item >XII Región</item>
+        <item >XIII Región</item>
+        <item >XIV Región</item>
+        <item >XV Región</item>
+    </string-array>
+    
+    <string-array name="ciudades">
+        <item >Selecciona Ciudad</item>
+        <item >Angol</item>
+        <item >Carahue</item>
+        <item >Cunco</item>
+        <item >Curarrehue</item>
+        <item >Freire</item>
+        <item >Galvarino</item>
+        <item >Gorbea</item>
+        <item >Lautaro</item>
+        <item >Loncoche</item>
+        <item >Nueva Imperial</item>
+        <item >Padre las Casas</item>
+        <item >Perquenco</item>
+        <item >Pitrufquén</item>
+        <item >Pucón</item>
+        <item >Temuco</item>
+        <item >Vilcún</item>
+        <item >Villarrica</item>
+        <item >Victoria</item>
+    </string-array>
+    
+    <string-array name="Estado">
+        <item >Selecciona</item>
+        <item >Privado</item>
+        <item >Público</item>
+    </string-array>
      
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
@@ -40,7 +88,7 @@
         <item>@drawable/icon_tipswhite</item>
         <item>@drawable/icon_morewhite</item>
         <item>@drawable/icon_settingwhite</item>
-        <item>@drawable/icon_help</item>
+        <item>@drawable/icon_hepwhite</item>
     </array>
 
 </resources>
