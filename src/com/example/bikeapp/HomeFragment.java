@@ -3,10 +3,14 @@ package com.example.bikeapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Usuario;
+import model.UsuarioFacade;
+
 import components.ImageView;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,10 +47,28 @@ public class HomeFragment extends Fragment {
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
 		TextView txtnombre = (TextView) rootView.findViewById(R.id.textView1);
 		TextView txtmail = (TextView) rootView.findViewById(R.id.textView2);
+<<<<<<< HEAD
 		txtnombre.setText(nombre);
 		txtnombre.setTextSize(40);
 		txtmail.setText(correo);
+=======
+		
+		/*
+		 * SharedPreferences
+		 */
+		SharedPreferences settings = getActivity().getSharedPreferences("Bikeapp", 0);
+		String username = settings.getString("username", null);
+		
+		UsuarioFacade uf = new UsuarioFacade(context);
+		Usuario user = uf.get(username);
+		
+		txtnombre.setText(user.getFullName());
+		txtnombre.setTextSize(40);
+		txtmail.setText(user.getCorreo());
+>>>>>>> origin/master
 		txtmail.setTextSize(25);
+		
+		
 		ArrayList<NavDrawerItem> elements = new ArrayList<NavDrawerItem>();
 		elements.add(new NavDrawerItem("Estado"));
 		elements.add(new NavDrawerItem("Actividad"));
@@ -88,6 +110,7 @@ public class HomeFragment extends Fragment {
 		default:
 			break;
 		}
+		
 		android.app.FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
 	}

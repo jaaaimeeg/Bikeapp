@@ -51,6 +51,9 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+	public CharSequence getFullName() {
+		return this.nombre + " " + this.apellido;
+	}
 	
 
 }
