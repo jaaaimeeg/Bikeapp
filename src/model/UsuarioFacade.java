@@ -29,10 +29,12 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE USUARIO (IDUSUARIO INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT,"+
 					" APELLIDO TEXT, CORREO TEXT, CONTRASENA TEXT, ESTADO TEXT, REGION TEXT, CIUDAD TEXT)");
+		db.execSQL("CREATE TABLE ALERTA (VALOR TEXT, LATITUD DOUBLE, LONGITUD DOUBLE)");
 	}
     @Override
 	public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
 		db.execSQL("DROP TABLE IF EXIST USUARIO");
+		db.execSQL("DROP TABLE IF EXIST ALERTA");
 		onCreate(db);
 	}
     //VERFICAR EL USUARIO

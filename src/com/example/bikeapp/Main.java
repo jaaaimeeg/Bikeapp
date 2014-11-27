@@ -1,5 +1,6 @@
 package com.example.bikeapp;
 
+import model.AlertaFacade;
 import model.Usuario;
 import model.UsuarioFacade;
 import register_dialog.RegisterDialog;
@@ -31,7 +32,8 @@ public class Main extends Activity {
 	public int height;
 	public TextEdit userEdit;
 	public TextEdit passwordEdit;
-	final UsuarioFacade db=new UsuarioFacade(this);
+	final UsuarioFacade db = new UsuarioFacade(this);
+	final AlertaFacade db2 = new AlertaFacade(this);
 	
     @SuppressWarnings("deprecation")
 	@Override
