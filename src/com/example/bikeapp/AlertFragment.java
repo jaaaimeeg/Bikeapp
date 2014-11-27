@@ -165,9 +165,8 @@ public class AlertFragment extends Fragment {
                 Integer kmInDec = Integer.valueOf(newFormat.format(km));
                 double meter = valueResult % 1000;
                 Integer meterInDec = Integer.valueOf(newFormat.format(meter));
- 
                 //Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
-                                + " Meter   " + meterInDec);
+                //                + " Meter   " + meterInDec);
  
                 return Radius * c;
         }
