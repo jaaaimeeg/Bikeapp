@@ -43,6 +43,8 @@ public class AlertFragment extends Fragment {
 	protected Button createPointButton;
 	AnnotationView annotation;
 
+	DefaultItemizedOverlay overlay = null;
+
 	public static List<GeoPoint> locations = new ArrayList<GeoPoint>();
 	public static double distance = 0.0;
 
@@ -204,13 +206,13 @@ public class AlertFragment extends Fragment {
 		for (int i = 0; i < arlal.size(); i++) {
 			Alerta alerta = arlal.get(i);
 			addAlertas(alerta.getValor(), alerta.getGeopoint());
-			Log.i("CICLO",String.valueOf(i));
+			Log.i("CICLO",alerta.getValor());
 		}
 	}
 
 	private void addAlertas(String alerta, GeoPoint gp) {
 		Drawable icon = getResources().getDrawable(R.drawable.caution_512);
-		final DefaultItemizedOverlay overlay = new DefaultItemizedOverlay(icon);
+		overlay = new DefaultItemizedOverlay(icon);
 		// add items with a title and a snippet
 		OverlayItem item1 = new OverlayItem(gp, "Alerta", alerta);
 		overlay.addItem(item1);
@@ -228,14 +230,13 @@ public class AlertFragment extends Fragment {
 				}
 			}
 		});
-
 		map.getOverlays().add(overlay);
 		map.invalidate();
 	}
 
 	private void addOverlay(String alerta) {
 		Drawable icon = getResources().getDrawable(R.drawable.caution_512);
-		final DefaultItemizedOverlay overlay = new DefaultItemizedOverlay(icon);
+		overlay = new DefaultItemizedOverlay(icon);
 		GeoPoint gp1 = myLocationOverlay.getMyLocation();
 		// add items with a title and a snippet
 		OverlayItem item1 = new OverlayItem(gp1, "Alerta", alerta);
