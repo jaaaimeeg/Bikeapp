@@ -94,8 +94,10 @@ public class AlertFragment extends Fragment {
                                 	locations.add(point);
                                 }
                                 
+                                DecimalFormat df = new DecimalFormat("000.00");
+                                String d = String.valueOf(df.format(distance/10));
                                 // calculate distance
-                                Log.i("DISTANCE", String.valueOf(distance));
+                                Log.i("DISTANCE KM", d);
                         }
  
                         public void onStatusChanged(String provider, int status,
