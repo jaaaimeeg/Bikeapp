@@ -65,61 +65,61 @@ public class AlertFragment extends Fragment {
 		});
 
 		setupMapView();
+		setAlertas();
 
 		this.myLocationOverlay = new MyLocationOverlay(context, map);
 		myLocationOverlay.enableMyLocation();
 		// Acquire a reference to the system Location Manager
-//		LocationManager locationManager = (LocationManager) getActivity()
-//				.getSystemService(Context.LOCATION_SERVICE);
-//
-//		// Define a listener that responds to location updates
-//		LocationListener locationListener = new LocationListener() {
-//			public void onLocationChanged(Location location) {
-//				Log.i("LOCATION", location.toString());
-//				Log.i("COUNT POINTS", String.valueOf(locations.size()));
-//
-//				setUp2();
-//
-//				int lat = (int) (location.getLatitude() * 1E6);
-//				int lng = (int) (location.getLongitude() * 1E6);
-//				GeoPoint point = new GeoPoint(lat, lng);
-//
-//				if (locations.size() > 1) {
-//					GeoPoint last = locations.get(locations.size() - 1);
-//					if (!point.equals(last)) {
-//						locations.add(point);
-//
-//						for (int i = 0; i < locations.size(); i++) {
-//							if (i != 0)
-//								distance += calculateDistance(
-//										locations.get(i - 1), locations.get(i));
-//						}
-//					}
-//				} else {
-//					locations.add(point);
-//				}
-//
-//				// calculate distance
-//				Log.i("DISTANCE", String.valueOf(distance));
-//			}
-//
-//			public void onStatusChanged(String provider, int status,
-//					Bundle extras) {
-//			}
-//
-//			public void onProviderEnabled(String provider) {
-//			}
-//
-//			public void onProviderDisabled(String provider) {
-//			}
-//		};
-//
-//		// Register the listener with the Location Manager to receive location
-//		// updates
-//		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
-//				0, locationListener);
+		LocationManager locationManager = (LocationManager) getActivity()
+				.getSystemService(Context.LOCATION_SERVICE);
 
-		setAlertas();
+		// Define a listener that responds to location updates
+		LocationListener locationListener = new LocationListener() {
+			public void onLocationChanged(Location location) {
+				Log.i("LOCATION", location.toString());
+				Log.i("COUNT POINTS", String.valueOf(locations.size()));
+
+				setUp2();
+
+				int lat = (int) (location.getLatitude() * 1E6);
+				int lng = (int) (location.getLongitude() * 1E6);
+				GeoPoint point = new GeoPoint(lat, lng);
+
+				if (locations.size() > 1) {
+					GeoPoint last = locations.get(locations.size() - 1);
+					if (!point.equals(last)) {
+						locations.add(point);
+
+						for (int i = 0; i < locations.size(); i++) {
+							if (i != 0)
+								distance += calculateDistance(
+										locations.get(i - 1), locations.get(i));
+						}
+					}
+				} else {
+					locations.add(point);
+				}
+
+				// calculate distance
+				Log.i("DISTANCE", String.valueOf(distance));
+			}
+
+			public void onStatusChanged(String provider, int status,
+					Bundle extras) {
+			}
+
+			public void onProviderEnabled(String provider) {
+			}
+
+			public void onProviderDisabled(String provider) {
+			}
+		};
+
+		// Register the listener with the Location Manager to receive location
+		// updates
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
+				0, locationListener);
+
 		return rootView;
 	}
 
