@@ -6,6 +6,9 @@ public class Usuario {
 	public String apellido;
 	public String correo;
 	public String contrasena;
+	public String estado;
+	public String region;
+	public String ciudad;
 	
 	public Usuario(int idUsuario, String nombre,String apellido,String correo,String contrasena){
 		this.idUsuario=idUsuario;
@@ -15,6 +18,7 @@ public class Usuario {
 		this.contrasena=contrasena;
 		
 	}
+
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
@@ -50,6 +54,26 @@ public class Usuario {
 	}
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+	public String getRegion() {
+		return region;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+	public String getCiudad() {
+		return ciudad;
 	}
 	public CharSequence getFullName() {
 		return this.nombre + " " + this.apellido;

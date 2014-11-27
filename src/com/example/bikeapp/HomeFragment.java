@@ -33,13 +33,7 @@ public class HomeFragment extends Fragment {
 			Bundle savedInstanceState){
     	context = inflater.getContext();
     	rootView = inflater.inflate(R.layout.fragment_perfil, container, false);
-    	
-    	Bundle extras = getActivity().getIntent().getExtras();
-        // on first time display view for first nav item
-        if(extras != null) {
-        	nombre= extras.getString("nombre")+" "+extras.getString("apellido");
-        	correo = extras.getString("correo");
-        }
+
 		ListView listaB = (ListView) rootView.findViewById(R.id.list_buttons);
 		img = (ImageView) rootView.findViewById(R.id.fotoperfil);
 		TextView txtnombre = (TextView) rootView.findViewById(R.id.titulo);

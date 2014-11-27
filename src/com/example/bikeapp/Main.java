@@ -129,7 +129,7 @@ public class Main extends Activity {
 	                }else{
 	                	AlertDialog alertDialog = new AlertDialog.Builder(Main.this).create();
                 		alertDialog.setTitle("Error");
-                		alertDialog.setMessage("Este usuario no existe");//+buscar);
+                		alertDialog.setMessage("Usuario o Contraseña Incorrectos");//+buscar);
                 		alertDialog.show();       	
                     }
             	}

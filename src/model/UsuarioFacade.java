@@ -18,6 +18,9 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 	public static final String USUARIO_COL_APELLIDO="APELLIDO";
 	public static final String USUARIO_COL_CORREO="CORREO";
 	public static final String USUARIO_COL_CONTRASENA="CONTRASENA";
+	public static final String USUARIO_COL_ESTADO="ESTADO";
+	public static final String USUARIO_COL_REGION="REGION";
+	public static final String USUARIO_COL_CIUDAD="CIUDAD";
 	
 	public UsuarioFacade(Context context) {
 		super(context,DATABASE_NAME,null,1);
@@ -25,7 +28,7 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE USUARIO (IDUSUARIO INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT,"+
-					" APELLIDO TEXT, CORREO TEXT, CONTRASENA TEXT)");
+					" APELLIDO TEXT, CORREO TEXT, CONTRASENA TEXT, ESTADO TEXT, REGION TEXT, CIUDAD TEXT)");
 	}
     @Override
 	public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
@@ -73,6 +76,19 @@ public class UsuarioFacade extends SQLiteOpenHelper{
     	
     	db.insert("USUARIO", null, recordUser);
     }	
+    
+    public int editarUser(Usuario user){
+    	SQLiteDatabase db=this.getWritableDatabase();
+    	ContentValues recordUser=new ContentValues();
+    	recordUser.put(USUARIO_COL_NOMBRE,user.getNombre());
+    	recordUser.put(USUARIO_COL_APELLIDO,user.getApellido());
+    	recordUser.put(USUARIO_COL_CONTRASENA,user.getContrasena());
+    	recordUser.put(USUARIO_COL_ESTADO,user.getEstado());
+    	recordUser.put(USUARIO_COL_REGION,user.getRegion());
+    	recordUser.put(USUARIO_COL_CIUDAD,user.getCiudad());
+    	
+        return db.update(TABLA_USUARIO, recordUser, USUARIO_COL_ID + "= ?", new String[] { String.valueOf(user.getIdUsuario()) });
+    }
 	
     /**
      * Get User data from DB using user email.
@@ -101,9 +117,19 @@ public class UsuarioFacade extends SQLiteOpenHelper{
 			        	 user.setApellido(cursor.getString(cursor.getColumnIndex(USUARIO_COL_APELLIDO)));
 			        	 user.setCorreo(cursor.getString(cursor.getColumnIndex(USUARIO_COL_CORREO)));
 			        	 user.setContrasena(cursor.getString(cursor.getColumnIndex(USUARIO_COL_CONTRASENA)));
+			        	 user.setEstado(cursor.getString(cursor.getColumnIndex(USUARIO_COL_ESTADO)));
+			        	 user.setRegion(cursor.getString(cursor.getColumnIndex(USUARIO_COL_REGION)));
+			        	 user.setCiudad(cursor.getString(cursor.getColumnIndex(USUARIO_COL_CIUDAD)));
 			         } while (cursor.moveToNext());
 			     }
 	 	}	      
 	     return user;
+    }
+    
+    public void borrarUser(Usuario user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLA_USUARIO, USUARIO_COL_ID + " = ?",
+                new String[] { String.valueOf(user.getIdUsuario()) });
+        db.close();
     }
 }
