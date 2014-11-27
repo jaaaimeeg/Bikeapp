@@ -148,7 +148,7 @@ public class Main extends Activity {
     }
     
     public void tmpHelp() {
-    	this.userEdit.setText("jgaleano2011@alu.uct.cl");
+    	this.userEdit.setText("rodrigovm@gmail.com");
     }
   
     public void setSharedPreferences(Usuario u) {
