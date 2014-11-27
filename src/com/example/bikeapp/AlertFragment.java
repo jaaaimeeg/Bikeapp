@@ -82,12 +82,12 @@ public class AlertFragment extends Fragment {
                                 
                                 if (locations.size() > 1 ) {
                                 	GeoPoint last = locations.get(locations.size() - 1);
-	                                if (point != last) {
+	                                if (!point.equals(last)) {
 	                                	locations.add(point);
 	                                	
 	                                	for (int i=0; i < locations.size(); i++){
 	                                		if (i != 0) 
-	                                			distance = calculateDistance(locations.get(i-1),locations.get(i));
+	                                			distance += calculateDistance(locations.get(i-1),locations.get(i));
 	                                	}
 	                                }
                                 } else {
@@ -165,8 +165,8 @@ public class AlertFragment extends Fragment {
                 Integer kmInDec = Integer.valueOf(newFormat.format(km));
                 double meter = valueResult % 1000;
                 Integer meterInDec = Integer.valueOf(newFormat.format(meter));
-                //Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
-                //                + " Meter   " + meterInDec);
+                Log.i("Radius Value", "" + valueResult + "   KM  " + kmInDec
+                                + " Meter   " + meterInDec);
  
                 return Radius * c;
         }
